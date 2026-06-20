@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- ============================================================
+     REPLACE the title and description with your own details.
+     ============================================================ -->
+<title>Zixin Wang — Economics, LSE</title>
+<meta name="description" content="Zixin [Surname], PhD candidate in Economics at the London School of Economics. Fields: Political Economy and Economic History." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper:    #FBFAF7;
+    --ink:      #1B1A17;
+    --ink-soft: #56524A;
+    --rule:     #E4DFD2;
+    --rule-soft:#EEEAE0;
+    --accent:   #2E4A52;   /* slate-teal: links */
+    --accent-d: #21363c;
+    --seal:     #9C3B2E;   /* muted seal red: used only as a small marker */
+    --maxw:     760px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Spectral", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(46,74,82,0.28);
+    transition: color .15s ease, border-color .15s ease;
+  }
+  a:hover { color: var(--accent-d); border-bottom-color: var(--accent-d); }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ---------- top nav ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(251,250,247,0.88);
+    backdrop-filter: saturate(120%) blur(8px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .nav-name {
+    font-weight: 500;
+    font-size: 1.02rem;
+    letter-spacing: .01em;
+    border: none;
+    color: var(--ink);
+  }
+  .nav-links {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: .82rem;
+    letter-spacing: .02em;
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    border: none;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { color: var(--seal); }
+
+  /* ---------- layout ---------- */
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- header / hero ---------- */
+  header.hero {
+    padding: 56px 0 38px;
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 36px;
+    align-items: start;
+    border-bottom: 1px solid var(--ink);
+    box-shadow: 0 2px 0 var(--paper), 0 3px 0 var(--rule); /* thin double rule */
+  }
+  .portrait {
+    width: 168px;
+    height: 200px;
+    object-fit: cover;
+    background: #ece8dd;
+    border: 1px solid var(--rule);
+    display: block;
+  }
+  /* placeholder look if no image yet */
+  .portrait.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .72rem;
+    color: #b3ad9d;
+    text-align: center;
+    line-height: 1.4;
+    padding: 8px;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.08;
+    margin: 2px 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .role {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .92rem;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+  .blurb { margin: 0 0 18px; font-size: 1.06rem; }
+  .blurb .field { font-style: italic; }
+
+  .meta {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .88rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    align-items: center;
+  }
+  .meta a { border: none; }
+  .cv-btn {
+    display: inline-block;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--paper) !important;
+    background: var(--ink);
+    border: none !important;
+    padding: 7px 16px;
+    border-radius: 2px;
+  }
+  .cv-btn:hover { background: var(--accent-d); }
+
+  /* ---------- sections ---------- */
+  section { padding-top: 46px; }
+  .eyebrow {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .76rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 22px;
+  }
+  /* seal-mark: small square nodding to an archival chop */
+  .eyebrow::before {
+    content: "";
+    width: 9px; height: 9px;
+    background: var(--seal);
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  /* ---------- research items ---------- */
+  .paper { padding: 20px 0; border-top: 1px solid var(--rule); }
+  .paper:first-of-type { border-top: none; padding-top: 0; }
+  .paper.jmp {
+    background: linear-gradient(to right, rgba(156,59,46,0.04), transparent 70%);
+    border-left: 2px solid var(--seal);
+    border-top: none;
+    padding: 18px 0 20px 20px;
+    margin-bottom: 4px;
+  }
+  .tag {
+    display: inline-block;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--seal);
+    border: 1px solid rgba(156,59,46,0.45);
+    border-radius: 2px;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+  }
+  .paper h3 {
+    font-size: 1.24rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 4px 0 6px;
+  }
+  .paper-meta {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .84rem;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+  .paper-meta .status { color: var(--seal); font-weight: 500; }
+
+  details { margin-top: 6px; }
+  summary {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: max-content;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "+"; font-weight: 600; }
+  details[open] summary::before { content: "–"; }
+  details[open] summary { margin-bottom: 8px; }
+  .abstract {
+    font-size: .98rem;
+    color: #2c2a25;
+    margin: 4px 0 0;
+    max-width: 64ch;
+  }
+  .links {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .84rem;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* ---------- simple lists (teaching / education) ---------- */
+  .row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .row:first-of-type { border-top: none; }
+  .row .when {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .84rem;
+    color: var(--ink-soft);
+    padding-top: 2px;
+  }
+  .row .what { font-size: 1rem; }
+  .row .what .sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .85rem;
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .refs p { margin: 0 0 4px; }
+  .refs .small {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .85rem;
+    color: var(--ink-soft);
+  }
+
+  footer {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px 24px 56px;
+    border-top: 1px solid var(--rule);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .82rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 620px) {
+    body { font-size: 17px; }
+    header.hero {
+      grid-template-columns: 1fr;
+      gap: 22px;
+      padding-top: 40px;
+    }
+    .portrait { width: 140px; height: 168px; }
+    h1 { font-size: 2.05rem; }
+    .nav-links { gap: 14px; }
+    .row { grid-template-columns: 1fr; gap: 4px; }
+    .nav-name { display: none; }
+    .nav-inner { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Zixin [Surname]</a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#" >CV</a> <!-- point this to your CV PDF -->
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <header class="hero">
+    <!-- Replace the placeholder div below with:
+         <img class="portrait" src="photo.jpg" alt="Zixin [Surname]" />  -->
+    <div class="portrait placeholder">Add your<br>photo here<br>(photo.jpg)</div>
+
+    <div>
+      <h1>Zixin [Surname]</h1>
+      <p class="role">PhD Candidate in Economics · London School of Economics and Political Science</p>
+
+      <p class="blurb">
+        I am a PhD candidate in Economics at the LSE, on the job market in
+        <strong>2026&ndash;27</strong>. My research is in
+        <span class="field">political economy and economic history</span>,
+        with a focus on how trade shocks reshape political and social conflict.
+      </p>
+
+      <div class="meta">
+        <a href="mailto:your-email@lse.ac.uk">your-email@lse.ac.uk</a>
+        <a class="cv-btn" href="#">Curriculum Vitae</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ RESEARCH ============================ -->
+  <section id="research">
+    <p class="eyebrow">Research</p>
+
+    <!-- ---- JOB MARKET PAPER ---- -->
+    <article class="paper jmp">
+      <span class="tag">Job Market Paper</span>
+      <h3>Losing Access to Canton: Trade Shock and Social Conflict in Qing China</h3>
+      <p class="paper-meta">Solo-authored · Latest draft: <em>[month year]</em></p>
+
+      <details open>
+        <summary>Abstract</summary>
+        <p class="abstract">
+        Does losing access to an established trade route stabilize or destabilize society? Economic theory is ambiguous. I examine the 1842 Treaty of Nanjing, which ended the Canton System and opened four new coastal treaty ports, collapsing demand for transport labor along the old inland routes. Using an original county-year panel of 427 counties from 1830 to 1860, I find that counties on the pre-1842 Canton routes experienced a large rise in rebellion probability after the treaty. Counties in the hinterland of Shanghai, which gained trade access, show no comparable rise. This asymmetry, together with effects concentrated in counties that served as transit hubs, points to an opportunity cost channel through displaced transport workers rather than rapacity. Disaggregating conflict by motive, the effect holds for both anti-social and anti-state violence, and route counties became substantially more susceptible to Taiping mobilization after 1851.
+
+      <div class="links">
+        <a href="#">PDF</a>
+        <a href="#">Slides</a>
+      </div>
+    </article>
+
+    <!-- ---- WORKING PAPERS / WORK IN PROGRESS ---- -->
+    <article class="paper">
+      <h3>[Title of a working paper or second project]</h3>
+      <p class="paper-meta">with [Co-author], if any · <span class="status">Working paper</span></p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">
+          [Paste the abstract here, or delete this whole &lt;article&gt; block if you do not
+          have a second paper yet. Keep this section short and honest: one job market paper
+          plus one or two genuine projects in progress is the norm.]
+        </p>
+      </details>
+      <div class="links">
+        <a href="#">Draft</a>
+      </div>
+    </article>
+
+    <article class="paper">
+      <h3>[Work in progress]</h3>
+      <p class="paper-meta"><span class="status">Work in progress</span></p>
+      <p class="abstract" style="margin-top:6px;">
+        [One or two sentences describing the project. Delete if not needed.]
+      </p>
+    </article>
+  </section>
+
+  <!-- ============================ TEACHING ============================ -->
+  <section id="teaching">
+    <p class="eyebrow">Teaching</p>
+
+    <div class="row">
+      <div class="when">2024&ndash;present</div>
+      <div class="what">
+        EC1B3 Macroeconomics I &mdash; LSE
+        <span class="sub">Class teacher, undergraduate</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2023&ndash;present</div>
+      <div class="what">
+        EC1A3 Microeconomics I &mdash; LSE
+        <span class="sub">Class teacher, undergraduate</span>
+      </div>
+    </div>
+    <!-- Add teaching evaluations or a "Teaching statement (PDF)" link here if you have them. -->
+  </section>
+
+  <!-- ============================ EDUCATION ============================ -->
+  <section id="education">
+    <p class="eyebrow">Education</p>
+
+    <div class="row">
+      <div class="when">2022&ndash;2027 (exp.)</div>
+      <div class="what">
+        PhD in Economics &mdash; London School of Economics
+        <span class="sub">Fields: Political Economy and Economic History</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">LSE</div>
+      <div class="what">
+        MRes Economics (Merit) · MSc Econometrics and Mathematical Economics (Distinction)
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">Liverpool / XJTLU</div>
+      <div class="what">
+        BSc Financial Mathematics (First Class Honours)
+        <span class="sub">Joint programme, University of Liverpool and Xi'an Jiaotong-Liverpool University</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ REFERENCES ============================ -->
+  <section id="references" class="refs">
+    <p class="eyebrow">References</p>
+    <p>Professor Ronny Razin &mdash; London School of Economics</p>
+    <p>Professor Kent Deng &mdash; London School of Economics</p>
+    <p class="small">[Add a third referee and their contact details / emails as appropriate.]</p>
+  </section>
+
+</main>
+
+<footer>
+  <span>Zixin [Surname] · LSE Department of Economics</span>
+  <span>Last updated [month year]</span>
+</footer>
+
+</body>
+</html>
